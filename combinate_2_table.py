@@ -2,7 +2,10 @@ import pandas as pd
 
 def merge_table(person:pd.DataFrame, address:pd.DataFrame) -> pd.DataFrame:
 
+#Using how and on, to select the user by id and left the user that don't have address information.
     table= pd.merge(person, address, on='personId', how='left')
+
+    #Here I return the specifics columns.
     return table[['firstName', 'lastName', 'city', 'state']]
 
 
